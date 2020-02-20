@@ -33,6 +33,8 @@ formats = {
     10: "total_tracks",
     11: "isrc",
     12: "track_id",
+    13: "copyright",
+    14: "publisher"
 }
 
 
@@ -93,6 +95,8 @@ def format_string(
     format_tags[9] = tags["track_number"]
     format_tags[10] = tags["total_tracks"]
     format_tags[11] = tags["external_ids"]["isrc"]
+    format_tags[13] = tags["copyright"]
+    format_tags[14] = tags["publisher"]
     try:
         format_tags[12] = tags["id"]
     except KeyError:
@@ -102,6 +106,8 @@ def format_string(
         k: sanitize_title(str(v), ok="'-_()[]{}") if slugification else str(v)
         for k, v in format_tags.items()
     }
+    log.debug("format_tags: {}".format(format_tags))
+    log.debug("sanitized tags {}".format(format_tags_sanitized))
     # calculating total digits presnet in total_songs to prepare a zfill.
     total_digits = 0 if total_songs == 0 else int(math.log10(total_songs)) + 1
 
@@ -116,7 +122,7 @@ def format_string(
 
     if const.args.no_spaces and not force_spaces:
         string_format = string_format.replace(" ", "_")
-
+    log.debug(string_format)
     return string_format
 
 
