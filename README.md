@@ -15,6 +15,11 @@
 
 - Works straight out of the box and does not require you to generate or mess with your API keys (already included).
 
+- Search format has two new parameters `publisher` and `copyright`, 
+- Above mentioned parameters can be used to fetch original content from youtube 
+   - ex: config.yaml 
+    - `search_format`: `'{publisher} - {artist} - {track_name}'`
+    
 Below is how your music library will look!
 
 <img src="http://i.imgur.com/Gpch7JI.png" width="290"><img src="http://i.imgur.com/5vhk3HY.png" width="290"><img src="http://i.imgur.com/RDTCCST.png" width="290">
