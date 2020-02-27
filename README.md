@@ -17,7 +17,7 @@
 
 - Search format has two new parameters `publisher` and `copyright`, 
 - Above mentioned parameters can be used to fetch original content from youtube 
-   - ex: config.yaml 
+   - Edit the [`config.yaml`](https://github.com/ritiek/spotify-downloader/wiki/Advanced-usage#config-file)  
     - `search_format`: `'{publisher} - {artist} - {track_name}'`
     
 Below is how your music library will look!
